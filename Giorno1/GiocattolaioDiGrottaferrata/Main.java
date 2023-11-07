@@ -12,5 +12,7 @@ public class Main {
         Giocattolo g2 = new Giocattolo("Macchinina", 20, 3);
         System.out.println(g1.getId());
         System.out.println(g2.getId());
+        Inventario inventario = Inventario.getInstance("admin", "admin");
+        
     }
 }

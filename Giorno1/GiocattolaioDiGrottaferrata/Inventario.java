@@ -4,16 +4,25 @@ import java.util.List;
 import java.util.ArrayList;
 
 public class Inventario {
+    private static Inventario instance = null;
     private final String nomeAdmin;
     private final String passwordAdmin;
     private List<Giocattolo> Giocattolo=new ArrayList<>();
 
-    //nel costruttore vanno specificati le credenziali per l'admin
-    public Inventario(String nomeAdmin, String passwordAdmin) {
+    //private constructor
+    private Inventario(String nomeAdmin, String passwordAdmin) {
         this.nomeAdmin = nomeAdmin;
         this.passwordAdmin = passwordAdmin;
     }
-    
+
+    //static method to get the single instance of the class
+    public static Inventario getInstance(String nomeAdmin, String passwordAdmin) {
+        if (instance == null) {
+            instance = new Inventario(nomeAdmin, passwordAdmin);
+        }
+        return instance;
+    }
+
     public void addGiocattolo(String nomeAdmin,String passwordAdmin,Giocattolo giocattolo){
         if (nomeAdmin==this.nomeAdmin && passwordAdmin==this.passwordAdmin) {
             Giocattolo.add(giocattolo);
