@@ -27,6 +27,6 @@ public class Vendita {
 
     @Override
     public String toString() {
-        return "Articolo venduto: " + giocattoloVenduto.getNome() + " a " + cliente.getNome() + " il " + dataVendita + "\n";
+        return "Articolo venduto: " + giocattoloVenduto.getNome() + " a " + cliente.getNome()+ " id: "+ cliente.getId() + " il " + dataVendita + "\n";
     }
 }

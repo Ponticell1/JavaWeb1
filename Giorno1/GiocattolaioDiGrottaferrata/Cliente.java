@@ -5,11 +5,13 @@ public class Cliente {
     private int id;
     private String nome;
     private String email;
+    private String password;
     
-        public Cliente(String nome, String email) {
+        public Cliente(String nome, String email, String password) {
             this.id = ++counter;
             this.nome = nome;
             this.email = email;
+            this.password = password;
         }
         public int getId() {
             return id;
@@ -28,6 +30,9 @@ public class Cliente {
         }
         public void setEmail(String email) {
             this.email = email;
+        }
+        protected String getPassword() {
+            return password;
         }
         @Override
         public String toString() {
