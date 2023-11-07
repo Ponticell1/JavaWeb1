@@ -12,7 +12,11 @@ public class Main {
         Giocattolo g2 = new Giocattolo("Macchinina", 20, 3);
         System.out.println(g1.getId());
         System.out.println(g2.getId());
-        Inventario inventario = Inventario.getInstance("admin", "admin");
-        
+        final String nomeAdmin = "admin";
+        final String passwordAdmin = "admin";
+        Inventario inventario = Inventario.getInstance(nomeAdmin, passwordAdmin);
+
+        inventario.addGiocattolo(nomeAdmin, passwordAdmin , g1);
+        inventario.addGiocattolo(nomeAdmin, passwordAdmin , g2);
     }
 }
