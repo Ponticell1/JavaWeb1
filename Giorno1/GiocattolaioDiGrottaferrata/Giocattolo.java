@@ -1,12 +1,14 @@
 package Giorno1.GiocattolaioDiGrottaferrata;
+
 public class Giocattolo{
+    private static int counter = 0;
     private int id;
     private String nome;
     private double prezzo;
     private int etaConsigliata;
 
-    public Giocattolo(int id, String nome, double prezzo, int etaConsigliata) {
-        this.id = id;
+    public Giocattolo(String nome, double prezzo, int etaConsigliata) {
+        this.id = ++counter;
         this.nome = nome;
         this.prezzo = prezzo;
         this.etaConsigliata = etaConsigliata;
@@ -42,6 +44,12 @@ public class Giocattolo{
 
     public void setEtaConsigliata(int etaConsigliata) {
         this.etaConsigliata = etaConsigliata;
+    }
+
+    @Override
+    public String toString() {
+        return "Giocattolo [id=" + id + ", nome=" + nome + ", prezzo=" + prezzo + ", etaConsigliata=" + etaConsigliata
+                + "]";
     }
     
     

@@ -24,5 +24,9 @@ public class Vendita {
     public Date getDataVendita() {
         return dataVendita;
     }
-    
+
+    @Override
+    public String toString() {
+        return "Articolo venduto: " + giocattoloVenduto.getNome() + " a " + cliente.getNome() + " il " + dataVendita + "\n";
+    }
 }
