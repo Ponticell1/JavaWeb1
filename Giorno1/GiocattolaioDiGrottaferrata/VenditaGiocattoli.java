@@ -2,16 +2,21 @@ package Giorno1.GiocattolaioDiGrottaferrata;
 
 import java.util.Date;
 
-public class Vendita {
+public class VenditaGiocattoli {
     private Cliente cliente;
     private Giocattolo giocattoloVenduto;
     private Date dataVendita;
     
-    public Vendita(Cliente cliente, Giocattolo giocattoloVenduto, Date dataVendita) {
+    public VenditaGiocattoli(Cliente cliente, Giocattolo giocattoloVenduto, Date dataVendita) {
         this.cliente = cliente;
         this.giocattoloVenduto = giocattoloVenduto;
         this.dataVendita = dataVendita;
     }
+    public VenditaGiocattoli(Cliente cliente, Giocattolo giocattoloVenduto) {
+        this.cliente = cliente;
+        this.giocattoloVenduto = giocattoloVenduto;
+    }
+
 
     public Cliente getCliente() {
         return cliente;

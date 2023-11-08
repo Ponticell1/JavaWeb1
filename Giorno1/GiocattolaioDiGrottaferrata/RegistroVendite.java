@@ -4,12 +4,24 @@ import java.util.List;
 import java.util.ArrayList;
 
 public abstract class RegistroVendite {
-    private List<Vendita> vendite = new ArrayList<>();
+    private List<VenditaGiocattoli> vendite = new ArrayList<>();
 
-    public void addVendita(Vendita vendita) {
+    public void addVendita(VenditaGiocattoli vendita) {
         vendite.add(vendita);
     }
-    public void removeVendita(Vendita vendita) {
+    public void removeVendita(VenditaGiocattoli vendita) {
         vendite.remove(vendita);
+    }
+    public void autoAddVenditaGiocattoli(Cliente cliente, Giocattolo giocattoloVenduto) {
+        VenditaGiocattoli vendita = new VenditaGiocattoli(cliente, giocattoloVenduto);
+        vendite.add(vendita);
+    }
+    public void autoRemoveVendita(Cliente cliente, Giocattolo giocattolo){
+
+    }
+    public void stampaVendite() {
+        for (VenditaGiocattoli vendita : vendite) {
+            System.out.println(vendita);
+        }
     }
 }
