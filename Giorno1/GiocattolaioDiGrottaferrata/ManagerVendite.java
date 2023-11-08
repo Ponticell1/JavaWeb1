@@ -15,10 +15,15 @@ public class ManagerVendite extends RegistroVendite{
         }
         return instance;
     }
-    public void autoVendita(String clienteLogin, String clientePassword, Cliente clienteTarget, Giocattolo giocattoloTarget) {
+    public void autoVendita(String clienteLogin, String clientePassword, Cliente clienteTarget, Giocattolo giocattoloTarget, Inventario inventario) {
         if (clienteLogin.equals(clienteTarget.getEmail()) && clientePassword.equals(clienteTarget.getPassword())) {
-            VenditaGiocattoli vendita = new VenditaGiocattoli(clienteTarget, giocattoloTarget);
-            addVendita(vendita);
+            if(inventario.isGiocattoloPresent(giocattoloTarget)){
+                VenditaGiocattoli vendita = new VenditaGiocattoli(clienteTarget, giocattoloTarget);
+                addVendita(vendita);
+            }
+            else if (!inventario.isGiocattoloPresent(giocattoloTarget)) {
+                System.out.println("Giocattolo non presente in inventario");
+            }
         } else {System.out.println("è possibile effettuare acquisti solamente per il proprio account");}
     }
     public void vendita(String nomeAdmin, String passswordAdmin, VenditaGiocattoli vendita){

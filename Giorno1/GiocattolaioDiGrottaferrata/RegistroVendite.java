@@ -24,4 +24,11 @@ public abstract class RegistroVendite {
             System.out.println(vendita);
         }
     }
+    public void stampaVendite(Cliente cliente) {
+        for (VenditaGiocattoli vendita : vendite) {
+            if (vendita.getCliente().equals(cliente)) {
+                System.out.println(vendita);
+            }
+        }
+    }
 }

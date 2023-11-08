@@ -30,11 +30,26 @@ public class Inventario {
             System.out.println("Credenziali errate");
         }
     }
+    public Giocattolo fetchGiocattolo(String nomeGiocattolo){
+        for (Giocattolo giocattolo : Giocattolo) {
+            if (giocattolo.getNome().equals(nomeGiocattolo)) {
+                return giocattolo;
+            }
+        }
+        return null;
+    }
     public void removeGiocattolo(String nomeAdmin, String passwordAdmin, Giocattolo giocattolo) {
         if (nomeAdmin.equals(this.nomeAdmin) && passwordAdmin.equals(this.passwordAdmin)) {
             Giocattolo.remove(giocattolo);
         } else {
             System.out.println("Credenziali errate");
+        }
+    }
+    public boolean isGiocattoloPresent(Giocattolo giocattolo){
+        if (Giocattolo.contains(giocattolo)) {
+            return true;
+        } else {
+            return false;
         }
     }
     public void stampaGiocattoli(){
