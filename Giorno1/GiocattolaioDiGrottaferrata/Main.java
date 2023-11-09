@@ -65,6 +65,7 @@ public class Main {
         System.out.println("3) Stampa storico acquisti");
         System.out.println("4) Logout");
         int choice = inputDetector.nextInt();
+        inputDetector.nextLine();
         switch (choice) {
             case 1:
                 acquistaGiocattolo(cliente);

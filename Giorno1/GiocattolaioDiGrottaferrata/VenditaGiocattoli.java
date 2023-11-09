@@ -17,7 +17,6 @@ public class VenditaGiocattoli {
         this.giocattoloVenduto = giocattoloVenduto;
     }
 
-
     public Cliente getCliente() {
         return cliente;
     }
