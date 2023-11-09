@@ -21,6 +21,7 @@ public class Main {
         
         inventario.addGiocattolo(nomeAdmin, passwordAdmin , g1);
         inventario.addGiocattolo(nomeAdmin, passwordAdmin , g2);
+        System.out.println("Benvenuto nel negozio di giocattoli di Grottaferrata:");
         login();
 
     }
@@ -104,4 +105,5 @@ public class Main {
     public static void stampaStoricoAcquisti(Cliente cliente){
         managerVendite.stampaVendite(cliente);
     }
+
 }
